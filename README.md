@@ -1,5 +1,5 @@
 # OVO-App-Clone
-OVO UI clone using Flutter\
+An app to find out data on Covid-19 cases in Indonesia and each province using flutter
 <img src="https://github.com/AloisiusBagas/Covid19-Indonesia/blob/master/Screenshoot/banner.jpg" width="614" height="300">
 
 ## Demo
