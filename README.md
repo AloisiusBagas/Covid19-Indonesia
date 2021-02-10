@@ -3,6 +3,8 @@ OVO UI clone using Flutter\
 <img src="https://github.com/AloisiusBagas/Covid19-Indonesia/blob/master/Screenshoot/banner.jpg" width="614" height="300">
 
 ## Demo
+<img src="https://github.com/AloisiusBagas/Covid19-Indonesia/blob/master/Screenshoot/Home.gif" width="360" height="720">
+<img src="https://github.com/AloisiusBagas/Covid19-Indonesia/blob/master/Screenshoot/Provinsi%20(1).gif" width="360" height="720">
 
 ## package used
   - cupertino_icons: ^0.1.3
