@@ -21,7 +21,7 @@ class ProvinsiIndonesiaService {
 
   List<ListDatum> sortdata(
       List<ListDatum> listdata, String sortBy, bool isDesc) {
-    List<ListDatum> sortlist = listdata;
+    List<ListDatum> sortlist = List.from(listdata);
     if (sortBy == "Positif") {
       sortlist.sort((x, y) => x.jumlahKasus.compareTo(y.jumlahKasus));
     } else if (sortBy == "Meninggal") {

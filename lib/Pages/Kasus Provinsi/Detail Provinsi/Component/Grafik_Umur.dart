@@ -1,4 +1,5 @@
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:community_charts_flutter/community_charts_flutter.dart'
+    as charts;
 import 'package:covid19app/Model/Grafik_Model.dart';
 import 'package:covid19app/contstant/ColorTemplate.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +9,16 @@ import 'package:covid19app/Model/ProvinsiIndonesia_Model.dart';
 class GrafikUmur extends StatefulWidget {
   final List<KelompokUmur> dataumur;
   const GrafikUmur({
-    Key key,
-    this.dataumur,
+    Key? key,
+    required this.dataumur,
   }) : super(key: key);
 
   @override
   _GrafikUmurState createState() => _GrafikUmurState();
 }
 
-List<KelompokUmur> listdata;
-List<charts.Series<Modelgrafikdata, String>> piedata;
+List<KelompokUmur> listdata = [];
+List<charts.Series<Modelgrafikdata, String>> piedata = [];
 
 void setgrafik(List<KelompokUmur> dataumur) {
   var data = [
@@ -51,8 +52,8 @@ void setgrafik(List<KelompokUmur> dataumur) {
 class _GrafikUmurState extends State<GrafikUmur> {
   @override
   void initState() {
-    listdata = List<KelompokUmur>();
-    piedata = List<charts.Series<Modelgrafikdata, String>>();
+    listdata = [];
+    piedata = [];
     setgrafik(widget.dataumur);
     super.initState();
   }
@@ -91,15 +92,4 @@ class _GrafikUmurState extends State<GrafikUmur> {
       ),
     );
   }
-}
-
-class Modelgender {
-  final String text;
-  final int value;
-  final Color color;
-  Modelgender({
-    this.text,
-    this.value,
-    this.color,
-  });
 }

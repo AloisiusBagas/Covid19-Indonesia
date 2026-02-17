@@ -8,12 +8,13 @@ import 'package:provider/provider.dart';
 import 'Provider/IndonesiaProvider.dart';
 import 'contstant/DisableLandscape.dart';
 
-main(List<String> args) {
+void main() {
   debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     disableLandscape();

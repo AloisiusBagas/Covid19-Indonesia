@@ -7,8 +7,8 @@ import 'Dashboard_component.dart';
 
 class DashboardStructure extends StatelessWidget {
   const DashboardStructure({
-    Key key,
-    @required this.dataIndonesia,
+    Key? key,
+    required this.dataIndonesia,
   }) : super(key: key);
   final Indonesia dataIndonesia;
   @override

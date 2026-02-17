@@ -9,7 +9,7 @@ import 'Component/ListProvinsi.dart';
 import 'Component/Searchbar_Provinsi.dart';
 
 class KasusProvinsiPage extends StatefulWidget {
-  const KasusProvinsiPage();
+  const KasusProvinsiPage({Key? key}) : super(key: key);
   @override
   _KasusProvinsiPageState createState() => _KasusProvinsiPageState();
 }

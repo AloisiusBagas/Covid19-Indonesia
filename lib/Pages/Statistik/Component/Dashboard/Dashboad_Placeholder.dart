@@ -4,7 +4,7 @@ import 'Dashboard_component.dart';
 
 class DashboardPlaceholder extends StatelessWidget {
   const DashboardPlaceholder({
-    Key key,
+    Key? key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -28,11 +28,13 @@ class DashboardPlaceholder extends StatelessWidget {
             children: [
               DataKasusRow1(
                 text: "Kasus Positif",
+                jumlah: "-",
                 warna: Color(0xFFFFB259),
                 isloading: true,
               ),
               DataKasusRow1(
                 text: "Kasus Meninggal",
+                jumlah: "-",
                 warna: Color(0xFFFF5959),
                 isloading: true,
               ),
@@ -44,16 +46,19 @@ class DashboardPlaceholder extends StatelessWidget {
             children: [
               DataKasusRow2(
                 text: "Sembuh",
+                jumlah: "-",
                 warna: Color(0xFF4CD97B),
                 isloading: true,
               ),
               DataKasusRow2(
                 text: "Dirawat",
+                jumlah: "-",
                 warna: Color(0xFF4CB5FF),
                 isloading: true,
               ),
               DataKasusRow2(
                 text: "Jumlah ODP",
+                jumlah: "-",
                 warna: Color(0xFF9059FF),
                 isloading: true,
               ),

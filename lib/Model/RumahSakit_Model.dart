@@ -8,17 +8,17 @@ String rumahSakitToJson(List<RumahSakit> data) =>
 
 class RumahSakit {
   RumahSakit({
-    this.name,
-    this.address,
-    this.region,
+    required this.name,
+    required this.address,
+    required this.region,
     this.phone,
-    this.province,
+    required this.province,
   });
 
   String name;
   String address;
   String region;
-  String phone;
+  String? phone;
   String province;
 
   factory RumahSakit.fromJson(Map<String, dynamic> json) => RumahSakit(

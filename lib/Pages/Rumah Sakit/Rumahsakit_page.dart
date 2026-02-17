@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class RumahsakitPage extends StatefulWidget {
-  const RumahsakitPage();
+  const RumahsakitPage({Key? key}) : super(key: key);
   @override
   _RumahsakitPageState createState() => _RumahsakitPageState();
 }

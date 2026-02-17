@@ -1,6 +1,6 @@
 import 'package:covid19app/Model/RumahSakit_Model.dart';
 import 'package:covid19app/Service/RumahSakitService.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class RumahsakitProvider with ChangeNotifier {
   RumahsakitService _rumahsakitService = const RumahsakitService();
@@ -17,7 +17,7 @@ class RumahsakitProvider with ChangeNotifier {
   }
 
   Future<List<RumahSakit>> getdataRumahSakit() async {
-    var listrumahsakit = List<RumahSakit>();
+    List<RumahSakit> listrumahsakit = [];
     _isloading = true;
     listrumahsakit = await _rumahsakitService.getdatafromAPI();
     final searchdata = listrumahsakit

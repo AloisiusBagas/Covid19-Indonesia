@@ -1,24 +1,25 @@
 import 'dart:async';
 
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 
 class DioConnectivityRequestRetrier {
   final Dio dio;
   final Connectivity connectivity;
 
   DioConnectivityRequestRetrier({
-    @required this.dio,
-    @required this.connectivity,
+    required this.dio,
+    required this.connectivity,
   });
+
   Future<Response> scheduleRequestRetry(RequestOptions requestOptions) async {
-    StreamSubscription streamSubscription;
+    StreamSubscription? streamSubscription;
     final responseCompleter = Completer<Response>();
+
     streamSubscription = connectivity.onConnectivityChanged.listen(
       (connectivityResult) async {
         if (connectivityResult != ConnectivityResult.none) {
-          streamSubscription.cancel();
+          streamSubscription?.cancel();
           responseCompleter.complete(
             dio.request(
               requestOptions.path,
@@ -27,7 +28,23 @@ class DioConnectivityRequestRetrier {
               onReceiveProgress: requestOptions.onReceiveProgress,
               onSendProgress: requestOptions.onSendProgress,
               queryParameters: requestOptions.queryParameters,
-              options: requestOptions,
+              options: Options(
+                method: requestOptions.method,
+                headers: requestOptions.headers,
+                sendTimeout: requestOptions.sendTimeout,
+                receiveTimeout: requestOptions.receiveTimeout,
+                extra: requestOptions.extra,
+                responseType: requestOptions.responseType,
+                contentType: requestOptions.contentType,
+                validateStatus: requestOptions.validateStatus,
+                receiveDataWhenStatusError:
+                    requestOptions.receiveDataWhenStatusError,
+                followRedirects: requestOptions.followRedirects,
+                maxRedirects: requestOptions.maxRedirects,
+                requestEncoder: requestOptions.requestEncoder,
+                responseDecoder: requestOptions.responseDecoder,
+                listFormat: requestOptions.listFormat,
+              ),
             ),
           );
         }

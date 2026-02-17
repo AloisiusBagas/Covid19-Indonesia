@@ -1,4 +1,5 @@
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:community_charts_flutter/community_charts_flutter.dart'
+    as charts;
 import 'package:covid19app/Model/Grafik_Model.dart';
 import 'package:covid19app/contstant/ColorTemplate.dart';
 import 'package:flutter/material.dart';
@@ -8,16 +9,16 @@ import 'package:covid19app/Model/ProvinsiIndonesia_Model.dart';
 class GrafikGender extends StatefulWidget {
   final List<JenisKelamin> datagender;
   const GrafikGender({
-    Key key,
-    this.datagender,
+    Key? key,
+    required this.datagender,
   }) : super(key: key);
 
   @override
   _GrafikGenderState createState() => _GrafikGenderState();
 }
 
-List<JenisKelamin> listdata;
-List<charts.Series<Modelgrafikdata, String>> piedata;
+List<JenisKelamin> listdata = [];
+List<charts.Series<Modelgrafikdata, String>> piedata = [];
 
 void setgrafik(List<JenisKelamin> datagender) {
   var data = [
@@ -47,9 +48,8 @@ void setgrafik(List<JenisKelamin> datagender) {
 class _GrafikGenderState extends State<GrafikGender> {
   @override
   void initState() {
-    setState(() {});
-    listdata = List<JenisKelamin>();
-    piedata = List<charts.Series<Modelgrafikdata, String>>();
+    listdata = [];
+    piedata = [];
     setgrafik(widget.datagender);
     super.initState();
   }
@@ -97,15 +97,4 @@ class _GrafikGenderState extends State<GrafikGender> {
       ),
     );
   }
-}
-
-class Modelgender {
-  final String text;
-  final int value;
-  final Color color;
-  Modelgender({
-    this.text,
-    this.value,
-    this.color,
-  });
 }

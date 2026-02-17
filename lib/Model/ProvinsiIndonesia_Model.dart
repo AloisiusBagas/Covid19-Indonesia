@@ -8,11 +8,11 @@ String indonesiaToJson(ProvinsiIndonesia data) => json.encode(data.toJson());
 
 class ProvinsiIndonesia {
   ProvinsiIndonesia({
-    this.lastDate,
-    this.currentData,
-    this.missingData,
-    this.tanpaProvinsi,
-    this.listData,
+    required this.lastDate,
+    required this.currentData,
+    required this.missingData,
+    required this.tanpaProvinsi,
+    required this.listData,
   });
 
   DateTime lastDate;
@@ -43,16 +43,16 @@ class ProvinsiIndonesia {
 
 class ListDatum {
   ListDatum({
-    this.key,
-    this.docCount,
-    this.jumlahKasus,
-    this.jumlahSembuh,
-    this.jumlahMeninggal,
-    this.jumlahDirawat,
-    this.jenisKelamin,
-    this.kelompokUmur,
-    this.lokasi,
-    this.penambahan,
+    required this.key,
+    required this.docCount,
+    required this.jumlahKasus,
+    required this.jumlahSembuh,
+    required this.jumlahMeninggal,
+    required this.jumlahDirawat,
+    required this.jenisKelamin,
+    required this.kelompokUmur,
+    required this.lokasi,
+    required this.penambahan,
   });
 
   String key;
@@ -99,8 +99,8 @@ class ListDatum {
 
 class JenisKelamin {
   JenisKelamin({
-    this.key,
-    this.docCount,
+    required this.key,
+    required this.docCount,
   });
 
   String key;
@@ -119,9 +119,9 @@ class JenisKelamin {
 
 class KelompokUmur {
   KelompokUmur({
-    this.key,
-    this.docCount,
-    this.usia,
+    required this.key,
+    required this.docCount,
+    required this.usia,
   });
 
   String key;
@@ -143,7 +143,7 @@ class KelompokUmur {
 
 class Usia {
   Usia({
-    this.value,
+    required this.value,
   });
 
   int value;
@@ -159,8 +159,8 @@ class Usia {
 
 class Lokasi {
   Lokasi({
-    this.lon,
-    this.lat,
+    required this.lon,
+    required this.lat,
   });
 
   double lon;
@@ -179,9 +179,9 @@ class Lokasi {
 
 class Penambahan {
   Penambahan({
-    this.positif,
-    this.sembuh,
-    this.meninggal,
+    required this.positif,
+    required this.sembuh,
+    required this.meninggal,
   });
 
   int positif;

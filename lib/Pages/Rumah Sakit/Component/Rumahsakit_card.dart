@@ -5,8 +5,8 @@ import 'Expansiondata.dart';
 
 class RumahsakitCard extends StatefulWidget {
   const RumahsakitCard({
-    Key key,
-    @required this.datarumahsakit,
+    Key? key,
+    required this.datarumahsakit,
   }) : super(key: key);
 
   final RumahSakit datarumahsakit;

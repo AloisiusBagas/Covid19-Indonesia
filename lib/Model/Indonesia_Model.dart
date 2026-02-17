@@ -7,8 +7,8 @@ String indonesiaToJson(Indonesia data) => json.encode(data.toJson());
 
 class Indonesia {
   Indonesia({
-    this.data,
-    this.update,
+    required this.data,
+    required this.update,
   });
 
   Data data;
@@ -27,11 +27,11 @@ class Indonesia {
 
 class Data {
   Data({
-    this.id,
-    this.jumlahOdp,
-    this.jumlahPdp,
-    this.totalSpesimen,
-    this.totalSpesimenNegatif,
+    required this.id,
+    required this.jumlahOdp,
+    required this.jumlahPdp,
+    required this.totalSpesimen,
+    required this.totalSpesimenNegatif,
   });
 
   int id;
@@ -59,9 +59,9 @@ class Data {
 
 class Update {
   Update({
-    this.penambahan,
-    this.harian,
-    this.total,
+    required this.penambahan,
+    required this.harian,
+    required this.total,
   });
 
   Penambahan penambahan;
@@ -84,17 +84,17 @@ class Update {
 
 class Harian {
   Harian({
-    this.keyAsString,
-    this.key,
-    this.docCount,
-    this.jumlahMeninggal,
-    this.jumlahSembuh,
-    this.jumlahPositif,
-    this.jumlahDirawat,
-    this.jumlahPositifKum,
-    this.jumlahSembuhKum,
-    this.jumlahMeninggalKum,
-    this.jumlahDirawatKum,
+    required this.keyAsString,
+    required this.key,
+    required this.docCount,
+    required this.jumlahMeninggal,
+    required this.jumlahSembuh,
+    required this.jumlahPositif,
+    required this.jumlahDirawat,
+    required this.jumlahPositifKum,
+    required this.jumlahSembuhKum,
+    required this.jumlahMeninggalKum,
+    required this.jumlahDirawatKum,
   });
 
   DateTime keyAsString;
@@ -140,7 +140,7 @@ class Harian {
 
 class Jumlah {
   Jumlah({
-    this.value,
+    required this.value,
   });
 
   int value;
@@ -156,12 +156,12 @@ class Jumlah {
 
 class Penambahan {
   Penambahan({
-    this.jumlahPositif,
-    this.jumlahMeninggal,
-    this.jumlahSembuh,
-    this.jumlahDirawat,
-    this.tanggal,
-    this.created,
+    required this.jumlahPositif,
+    required this.jumlahMeninggal,
+    required this.jumlahSembuh,
+    required this.jumlahDirawat,
+    required this.tanggal,
+    required this.created,
   });
 
   int jumlahPositif;
@@ -193,10 +193,10 @@ class Penambahan {
 
 class Total {
   Total({
-    this.jumlahPositif,
-    this.jumlahDirawat,
-    this.jumlahSembuh,
-    this.jumlahMeninggal,
+    required this.jumlahPositif,
+    required this.jumlahDirawat,
+    required this.jumlahSembuh,
+    required this.jumlahMeninggal,
   });
 
   int jumlahPositif;

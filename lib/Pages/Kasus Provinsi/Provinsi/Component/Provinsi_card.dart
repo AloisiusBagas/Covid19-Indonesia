@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 
 class ProvinsiCard extends StatelessWidget {
   const ProvinsiCard({
-    Key key,
-    @required this.dataprovinsi,
-    this.provinsiIndonesiaProvider,
+    Key? key,
+    required this.dataprovinsi,
+    required this.provinsiIndonesiaProvider,
   }) : super(key: key);
 
   final ListDatum dataprovinsi;

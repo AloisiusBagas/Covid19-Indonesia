@@ -8,13 +8,14 @@ import 'Kasus Provinsi/Provinsi/KasusProvinsi_page.dart';
 import 'Rumah Sakit/Rumahsakit_page.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
   int bottomSelectedIndex = 0;
-  PageController _pagecontroller;
+  late PageController _pagecontroller;
   @override
   void initState() {
     _pagecontroller = new PageController(initialPage: 0);
@@ -44,11 +45,12 @@ class _MainPageState extends State<MainPage> {
   List<BottomNavigationBarItem> buildBottomNavBarItems() {
     return [
       BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.home), label: 'Home'),
+          icon: FaIcon(FontAwesomeIcons.house), label: 'Home'),
       BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.mapMarkerAlt), label: 'Provinsi'),
+          icon: FaIcon(FontAwesomeIcons.locationDot), label: 'Provinsi'),
       BottomNavigationBarItem(
-          icon: FaIcon(FontAwesomeIcons.clinicMedical), label: 'Rs rujukan')
+          icon: FaIcon(FontAwesomeIcons.houseChimneyMedical),
+          label: 'Rs rujukan')
     ];
   }
 

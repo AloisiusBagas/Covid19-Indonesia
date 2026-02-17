@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class SearchProvinsi extends StatefulWidget {
   const SearchProvinsi({
-    Key key,
-    @required this.provinsiIndonesiaProvider,
+    Key? key,
+    required this.provinsiIndonesiaProvider,
   }) : super(key: key);
   final ProvinsiIndonesiaProvider provinsiIndonesiaProvider;
 
@@ -13,9 +13,8 @@ class SearchProvinsi extends StatefulWidget {
   _SearchProvinsiState createState() => _SearchProvinsiState();
 }
 
-TextEditingController searchcontroller;
-
 class _SearchProvinsiState extends State<SearchProvinsi> {
+  late TextEditingController searchcontroller;
   @override
   void initState() {
     searchcontroller = TextEditingController();

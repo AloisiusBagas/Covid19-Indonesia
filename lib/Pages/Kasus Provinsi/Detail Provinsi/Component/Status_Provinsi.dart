@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class StatusProvinsi extends StatelessWidget {
   const StatusProvinsi({
-    Key key,
-    @required this.dataprovinsi,
+    Key? key,
+    required this.dataprovinsi,
   }) : super(key: key);
 
   final ListDatum dataprovinsi;
@@ -89,9 +89,9 @@ class StatusProvinsi extends StatelessWidget {
 
 class DataStatus extends StatelessWidget {
   const DataStatus({
-    Key key,
-    this.judul,
-    this.jumlah,
+    Key? key,
+    required this.judul,
+    required this.jumlah,
   }) : super(key: key);
 
   final String judul;

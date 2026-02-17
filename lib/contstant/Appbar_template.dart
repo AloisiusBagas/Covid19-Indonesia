@@ -6,15 +6,15 @@ import 'ColorTemplate.dart';
 
 class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
   const DefaultAppbar({
-    Key key,
+    Key? key,
     this.iconData,
     this.isAction = false,
     this.title,
   }) : super(key: key);
 
-  final IconData iconData;
+  final IconData? iconData;
   final bool isAction;
-  final String title;
+  final String? title;
   @override
   Widget build(BuildContext context) {
     AlertSort alertSort = AlertSort();
@@ -22,7 +22,7 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: darkpurple,
       title: title != null
           ? Text(
-              title,
+              title!,
               style: TextStyle(
                   fontWeight: FontWeight.w700,
                   fontSize: 17,

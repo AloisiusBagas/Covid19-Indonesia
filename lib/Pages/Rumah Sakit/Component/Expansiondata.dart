@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Expansiondata extends StatelessWidget {
   const Expansiondata({
-    Key key,
-    this.datarumahsakit,
+    Key? key,
+    required this.datarumahsakit,
   }) : super(key: key);
   final RumahSakit datarumahsakit;
 
@@ -18,15 +18,10 @@ class Expansiondata extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          datarumahsakit.region != null
-              ? detaildata(datarumahsakit.region, FontAwesomeIcons.mapMarkedAlt)
-              : Container(),
-          datarumahsakit.address != null
-              ? detaildata(
-                  datarumahsakit.address, FontAwesomeIcons.mapMarkerAlt)
-              : Container(),
+          detaildata(datarumahsakit.region, FontAwesomeIcons.mapLocationDot),
+          detaildata(datarumahsakit.address, FontAwesomeIcons.locationDot),
           datarumahsakit.phone != null
-              ? detaildata(datarumahsakit.phone, FontAwesomeIcons.phone)
+              ? detaildata(datarumahsakit.phone!, FontAwesomeIcons.phone)
               : Container(),
         ],
       ),

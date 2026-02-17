@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class GrafikPlaceholder extends StatelessWidget {
   const GrafikPlaceholder({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -30,8 +30,8 @@ class GrafikPlaceholder extends StatelessWidget {
 
 class PlaceholderView extends StatelessWidget {
   const PlaceholderView({
-    Key key,
-    this.judul,
+    Key? key,
+    required this.judul,
   }) : super(key: key);
   final String judul;
   @override

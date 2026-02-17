@@ -22,21 +22,19 @@ class AlertSort {
             SortBy(),
           ],
         ));
-    showDialog(context: context, child: alertDialog);
+    showDialog(context: context, builder: (context) => alertDialog);
   }
 }
 
 class SortDirection extends StatefulWidget {
-  final String label;
-
-  const SortDirection({Key key, this.label}) : super(key: key);
+  const SortDirection({Key? key}) : super(key: key);
   @override
   _SortDirectionState createState() => _SortDirectionState();
 }
 
 class _SortDirectionState extends State<SortDirection> {
   List<String> listdirection = ['ASC', 'DSC'];
-  static int defaultchoice = 1;
+  static int? defaultchoice = 1;
   @override
   Widget build(BuildContext context) {
     final _dataIndonesia = Provider.of<ProvinsiIndonesiaProvider>(context);
@@ -73,9 +71,7 @@ class _SortDirectionState extends State<SortDirection> {
 }
 
 class SortBy extends StatefulWidget {
-  final String label;
-
-  const SortBy({Key key, this.label}) : super(key: key);
+  const SortBy({Key? key}) : super(key: key);
   @override
   _SortByState createState() => _SortByState();
 }
@@ -88,8 +84,7 @@ class _SortByState extends State<SortBy> {
     'Meninggal',
     'Alfabet'
   ];
-  static int defaultchoice = 0;
-  bool isselected;
+  static int? defaultchoice = 0;
   @override
   Widget build(BuildContext context) {
     final _dataIndonesia = Provider.of<ProvinsiIndonesiaProvider>(context);
