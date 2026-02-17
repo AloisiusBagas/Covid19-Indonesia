@@ -8,7 +8,7 @@ class ProvinsiIndonesiaProvider with ChangeNotifier {
 
   String _searchProvinsi = "";
   bool _isdecending = true;
-  bool _isloading;
+  bool _isloading = false;
   String _sortBy = "Positif";
 
   String get searchProvinsi => _searchProvinsi;
@@ -32,7 +32,7 @@ class ProvinsiIndonesiaProvider with ChangeNotifier {
   }
 
   Future<List<ListDatum>> getdataprovinsiIndonesia() async {
-    var listprovinsi = List<ListDatum>();
+    List<ListDatum> listprovinsi = [];
     _isloading = true;
     listprovinsi =
         await _provinsiIndonesiaService.getdataprovinsi(_sortBy, _isdecending);

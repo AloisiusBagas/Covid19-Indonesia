@@ -8,7 +8,8 @@ import 'Component/Status_Provinsi.dart';
 class DetailprovinsiPage extends StatelessWidget {
   final ListDatum dataprovinsi;
 
-  const DetailprovinsiPage({Key key, this.dataprovinsi}) : super(key: key);
+  const DetailprovinsiPage({Key? key, required this.dataprovinsi})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(

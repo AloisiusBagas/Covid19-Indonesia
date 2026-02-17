@@ -6,8 +6,8 @@ import 'ColorTemplate.dart';
 class MainBottomNavBar extends StatefulWidget {
   final PageController pageController;
   const MainBottomNavBar({
-    Key key,
-    this.pageController,
+    Key? key,
+    required this.pageController,
   }) : super(key: key);
 
   @override

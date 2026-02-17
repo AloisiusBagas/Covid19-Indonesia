@@ -1,4 +1,4 @@
-import 'package:connectivity/connectivity.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:covid19app/Interceptor/dio_connectivity_request_retrier.dart';
 import 'package:covid19app/Interceptor/retry_interceptor.dart';
 import 'package:dio/dio.dart';

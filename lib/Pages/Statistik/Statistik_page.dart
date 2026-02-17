@@ -1,3 +1,4 @@
+import 'package:covid19app/Model/Indonesia_Model.dart';
 import 'package:covid19app/Provider/IndonesiaProvider.dart';
 import 'package:covid19app/contstant/ColorTemplate.dart';
 import 'package:flutter/material.dart';
@@ -57,14 +58,15 @@ class _StatistikPageState extends State<StatistikPage> {
                       handle: NestedScrollView.sliverOverlapAbsorberHandleFor(
                           context)),
                   SliverToBoxAdapter(
-                    child: FutureBuilder(
+                    child: FutureBuilder<Indonesia>(
                       future: _dataindonesia.getdataIndonesia(),
-                      builder: (BuildContext context, snapshot) {
+                      builder: (BuildContext context,
+                          AsyncSnapshot<Indonesia> snapshot) {
                         if (snapshot.hasData == false ||
                             snapshot.hasError == true) {
                           return GrafikPlaceholder();
                         }
-                        return GrafikStructure(dataIndonesia: snapshot.data);
+                        return GrafikStructure(dataIndonesia: snapshot.data!);
                       },
                     ),
                   ),

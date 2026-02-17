@@ -9,7 +9,10 @@ class RumahsakitService {
     DioInitialized _initialized = DioInitialized();
     Response response = await _initialized.dio
         .get("https://dekontaminasi.com/api/id/covid19/hospitals");
-    final data = rumahSakitFromJson(response.data);
+    // Ensure response.data is a List
+    final List<dynamic> responseData =
+        (response.data is String) ? [] : response.data;
+    final data = responseData.map((x) => RumahSakit.fromJson(x)).toList();
     return data;
   }
 }

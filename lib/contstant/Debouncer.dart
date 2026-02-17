@@ -3,13 +3,12 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 
 class Debouncer {
-  const Debouncer();
+  Timer? _timer;
 
-  run(VoidCallback action) {
-    Timer _timer;
+  void run(VoidCallback action) {
     if (_timer != null) {
-      _timer.cancel();
+      _timer!.cancel();
     }
-    _timer = Timer(Duration(milliseconds: 1500), action);
+    _timer = Timer(Duration(milliseconds: 500), action);
   }
 }

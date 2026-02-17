@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class DataKasusRow1 extends StatelessWidget {
   const DataKasusRow1({
-    Key key,
-    this.text,
-    this.jumlah,
-    this.warna,
+    Key? key,
+    required this.text,
+    required this.jumlah,
+    required this.warna,
     this.isloading = false,
     this.penambahan = 0,
   }) : super(key: key);
@@ -83,10 +83,10 @@ class DataKasusRow1 extends StatelessWidget {
 
 class DataKasusRow2 extends StatelessWidget {
   const DataKasusRow2({
-    Key key,
-    this.text,
-    this.jumlah,
-    this.warna,
+    Key? key,
+    required this.text,
+    required this.jumlah,
+    required this.warna,
     this.isloading = false,
     this.penambahan = 0,
   }) : super(key: key);
@@ -94,7 +94,7 @@ class DataKasusRow2 extends StatelessWidget {
   final String jumlah;
   final int penambahan;
   final Color warna;
-  final isloading;
+  final bool isloading;
   @override
   Widget build(BuildContext context) {
     return Container(

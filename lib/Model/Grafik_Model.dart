@@ -5,8 +5,8 @@ class Modelgrafikdata {
   final int value;
   final Color color;
   Modelgrafikdata({
-    this.text,
-    this.value,
-    this.color,
+    required this.text,
+    required this.value,
+    required this.color,
   });
 }

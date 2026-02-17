@@ -5,8 +5,8 @@ import 'Grafik_Template.dart';
 
 class GrafikStructure extends StatelessWidget {
   const GrafikStructure({
-    Key key,
-    @required this.dataIndonesia,
+    Key? key,
+    required this.dataIndonesia,
   }) : super(key: key);
 
   final Indonesia dataIndonesia;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class PurpleBG extends StatelessWidget {
   const PurpleBG({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override

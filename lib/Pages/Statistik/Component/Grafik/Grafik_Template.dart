@@ -1,28 +1,34 @@
 import 'dart:math';
 import 'package:covid19app/Model/Indonesia_Model.dart';
 import 'package:flutter/material.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:community_charts_flutter/community_charts_flutter.dart'
+    as charts;
 // ignore: implementation_imports
-import 'package:charts_flutter/src/text_element.dart' as chartsTextElement;
+import 'package:community_charts_flutter/src/text_element.dart'
+    as chartsTextElement;
 // ignore: implementation_imports
-import 'package:charts_flutter/src/text_style.dart' as chartsTextStyle;
+import 'package:community_charts_flutter/src/text_style.dart'
+    as chartsTextStyle;
 
-int currentval;
+int? currentval;
 
 class GrafikTemplate extends StatefulWidget {
   final List<Harian> dataHarian;
   final String id;
-  const GrafikTemplate({Key key, this.dataHarian, this.id}) : super(key: key);
+  const GrafikTemplate({Key? key, required this.dataHarian, required this.id})
+      : super(key: key);
 
   @override
   _GrafikTemplateState createState() => _GrafikTemplateState();
 }
 
-List<Harian> listData;
-List<charts.Series<Harian, DateTime>> dataPositif;
+List<Harian> listData = [];
+List<charts.Series<Harian, DateTime>> dataPositif = [];
 
 List<Harian> generatedata(List<Harian> data) {
   var sixmonthago = DateTime.now().month - 6;
+  // Handle circular month subtraction if needed (e.g. jan - 6)
+  // But for simple logic provided:
   return data.where((data) => data.keyAsString.month >= sixmonthago).toList();
 }
 
@@ -50,8 +56,8 @@ class _GrafikTemplateState extends State<GrafikTemplate> {
   @override
   void initState() {
     super.initState();
-    listData = List<Harian>();
-    dataPositif = List<charts.Series<Harian, DateTime>>();
+    listData = [];
+    dataPositif = [];
     listData = generatedata(widget.dataHarian);
     setgrafik(widget.id);
   }
@@ -95,7 +101,7 @@ class _GrafikTemplateState extends State<GrafikTemplate> {
                         changedListener: (charts.SelectionModel model) {
                       if (model.hasDatumSelection)
                         currentval = model.selectedSeries[0]
-                            .measureFn(model.selectedDatum[0].index);
+                            .measureFn(model.selectedDatum[0].index) as int?;
                       print(currentval);
                     })
                   ],
@@ -113,11 +119,11 @@ class _GrafikTemplateState extends State<GrafikTemplate> {
 class CustomCircleSymbolRenderer extends charts.CircleSymbolRenderer {
   @override
   void paint(charts.ChartCanvas canvas, Rectangle<num> bounds,
-      {List<int> dashPattern,
-      charts.Color fillColor,
-      charts.FillPatternType fillPattern,
-      charts.Color strokeColor,
-      double strokeWidthPx}) {
+      {List<int>? dashPattern,
+      charts.Color? fillColor,
+      charts.FillPatternType? fillPattern,
+      charts.Color? strokeColor,
+      double? strokeWidthPx}) {
     super.paint(canvas, bounds,
         dashPattern: dashPattern,
         fillColor: fillColor,

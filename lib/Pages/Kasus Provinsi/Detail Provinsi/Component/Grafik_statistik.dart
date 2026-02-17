@@ -1,4 +1,5 @@
-import 'package:charts_flutter/flutter.dart' as charts;
+import 'package:community_charts_flutter/community_charts_flutter.dart'
+    as charts;
 import 'package:covid19app/Model/Grafik_Model.dart';
 import 'package:flutter/material.dart';
 
@@ -11,19 +12,19 @@ class GrafikStatistik extends StatefulWidget {
   final int jumlahDirawat;
 
   const GrafikStatistik({
-    Key key,
-    this.jumlahKasus,
-    this.jumlahSembuh,
-    this.jumlahMeninggal,
-    this.jumlahDirawat,
+    Key? key,
+    required this.jumlahKasus,
+    required this.jumlahSembuh,
+    required this.jumlahMeninggal,
+    required this.jumlahDirawat,
   }) : super(key: key);
 
   @override
   _GrafikStatistikState createState() => _GrafikStatistikState();
 }
 
-List<ListDatum> listdata;
-List<charts.Series<Modelgrafikdata, String>> piedata;
+List<ListDatum> listdata = [];
+List<charts.Series<Modelgrafikdata, String>> piedata = [];
 
 void setgrafik(int kasus, int sembuh, int meninggal, int dirawat) {
   var data = [
@@ -50,8 +51,8 @@ void setgrafik(int kasus, int sembuh, int meninggal, int dirawat) {
 class _GrafikStatistikState extends State<GrafikStatistik> {
   @override
   void initState() {
-    listdata = List<ListDatum>();
-    piedata = List<charts.Series<Modelgrafikdata, String>>();
+    listdata = [];
+    piedata = [];
     setgrafik(widget.jumlahKasus, widget.jumlahSembuh, widget.jumlahMeninggal,
         widget.jumlahDirawat);
     super.initState();
@@ -91,15 +92,4 @@ class _GrafikStatistikState extends State<GrafikStatistik> {
       ],
     );
   }
-}
-
-class Modelgender {
-  final String text;
-  final int value;
-  final Color color;
-  Modelgender({
-    this.text,
-    this.value,
-    this.color,
-  });
 }

@@ -16,8 +16,6 @@ class IndonesiaService {
 
   Future<List<Harian>> getupdateharianIndonesia() async {
     Indonesia dataAPI = await getdataFromAPI();
-    List dataharian = dataAPI.update.harian;
-    List<Harian> data = dataharian.map((e) => Harian.fromJson(e)).toList();
-    return data;
+    return dataAPI.update.harian;
   }
 }
