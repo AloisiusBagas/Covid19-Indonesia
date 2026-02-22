@@ -1,7 +1,6 @@
 import 'package:covid19app/Pages/MainPage.dart';
 import 'package:covid19app/Provider/ProvinsiIndonesiaProvider.dart';
 import 'package:covid19app/Provider/RumahsakitProvider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';

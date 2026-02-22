@@ -2,7 +2,6 @@ import 'package:covid19app/Pages/Statistik/Statistik_page.dart';
 import 'package:covid19app/contstant/ColorTemplate.dart';
 import 'package:covid19app/contstant/KeyboardHider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'Kasus Provinsi/Provinsi/KasusProvinsi_page.dart';
 import 'Rumah Sakit/Rumahsakit_page.dart';
